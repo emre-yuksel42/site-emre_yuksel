@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= data?.hero?.name || 'Portfolio' %> - Développeur Web</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo"><%= data?.hero?.name || 'Portfolio' %></div>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#skills">Expertise</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1><%= data?.hero?.name || 'Portfolio' %></h1>
+                <h2><%= data?.hero?.title || 'Développeur Web' %></h2>
+                <p class="hero-description"><%= data?.hero?.description || 'Description du portfolio' %></p>
+                <a href="#contact" class="cta-button"><%= data?.hero?.cta || 'Me contacter' %></a>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Mes Services</h2>
+                <div class="services-grid">
+                    <% (data?.services || []).forEach(service => { %>
+                        <div class="service-card">
+                            <h3><%= service.title %></h3>
+                            <p><%= service.description %></p>
+                            <ul>
+                                <% (service.features || []).forEach(feature => { %>
+                                    <li><%= feature %></li>
+                                <% }); %>
+                            </ul>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title">Mon Expertise</h2>
+                <div class="skills-container">
+                    <div class="skills-column">
+                        <h3>Compétences Techniques</h3>
+                        <div class="skills-grid">
+                            <% (data?.skills?.technical || []).forEach(skill => { %>
+                                <div class="skill-tag"><%= skill %></div>
+                            <% }); %>
+                        </div>
+                    </div>
+                    <div class="skills-column">
+                        <h3>Soft Skills</h3>
+                        <div class="skills-grid">
+                            <% (data?.skills?.soft || []).forEach(skill => { %>
+                                <div class="skill-tag"><%= skill %></div>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Me Contacter</h2>
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3>Email</h3>
+                        <p><a href="mailto:<%= data?.contact?.email || '' %>"><%= data?.contact?.email || 'Email non disponible' %></a></p>
+                    </div>
+                    <div class="contact-card">
+                        <h3>Téléphone</h3>
+                        <p><a href="tel:<%= data?.contact?.phone || '' %>"><%= data?.contact?.phone || 'Téléphone non disponible' %></a></p>
+                    </div>
+                    <div class="contact-card">
+                        <h3>Localisation</h3>
+                        <p><%= data?.contact?.location || 'Localisation non disponible' %></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <%= new Date().getFullYear() %> <%= data?.hero?.name || 'Portfolio' %> - Tous droits réservés</p>
+        </div>
+    </footer>
+</body>
+</html>
