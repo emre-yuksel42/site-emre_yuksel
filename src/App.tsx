@@ -93,10 +93,14 @@ function App() {
             <div>
               <h3 className="text-xl font-semibold mb-6 text-indigo-400">Compétences Techniques</h3>
               <div className="flex flex-wrap gap-3">
-                {['Node.js', 'Express.js', 'API REST', 'JavaScript', 'Git', 'CI/CD'].map((skill) => (
+
+
+
+              {['Node.js', 'Express.js', 'API REST', 'JavaScript', 'Git', 'CI/CD', 'SEO', 'PHP'].map((skill) => (
                   <span key={skill} className="bg-gray-700 px-4 py-2 rounded-full text-gray-200 text-sm font-medium border border-gray-600">
                     {skill}
                   </span>
+                
                 ))}
               </div>
             </div>

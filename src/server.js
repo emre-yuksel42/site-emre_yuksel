@@ -39,7 +39,7 @@ const pageData = {
     }
   ],
   skills: {
-    technical: ['Node.js', 'Express.js', 'API REST', 'JavaScript', 'Git', 'CI/CD'],
+    technical: ['Node.js', 'Express.js', 'API REST', 'JavaScript', 'SEO','PHP','Git', 'CI/CD'],
     soft: ['Gestion de projet', 'Communication', 'Travail d\'équipe', 'Résolution de problèmes']
   },
   contact: {
